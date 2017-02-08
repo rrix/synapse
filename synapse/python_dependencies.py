@@ -108,12 +108,6 @@ def check_requirements(config=None):
                     "Can't import %r which is part of %r"
                     % (module_name, dependency), module_name, dependency
                 )
-            version = getattr(module, "__version__", None)
-            file_path = getattr(module, "__file__", None)
-            logger.info(
-                "Using %r version %r from %r to satisfy %r",
-                module_name, version, file_path, dependency
-            )
 
             if version_test == ">=":
                 if version is None:
